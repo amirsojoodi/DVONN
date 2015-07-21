@@ -1,6 +1,10 @@
 # DVONN
-DVONN Game written in C and GTK+
+DVONN Game written in C and GTK+ (32 bit version)
 
-Developed in KeplerEclipse for CPP (windows).
+The game description can be found (here)[https://en.wikipedia.org/wiki/DVONN].
 
-Take a look at compiler parameter and the options to eclipse.
+GTK can be found (here)[http://www.gtk.org/download/index.php].
+
+Developed in KeplerEclipse for CPP (windows). It can be found (here)[http://eclipse.org].
+
+Take a look at compiler-parameters.txt and add the options to eclipse.
