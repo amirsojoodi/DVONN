@@ -1,0 +1,2336 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <!-- interface-requires gtk+ 3.0 -->
+  <object class="GtkMessageDialog" id="age_message">
+    <property name="can_focus">False</property>
+    <property name="border_width">5</property>
+    <property name="window_position">center</property>
+    <property name="destroy_with_parent">True</property>
+    <property name="type_hint">dialog</property>
+    <property name="skip_taskbar_hint">True</property>
+    <property name="message_type">error</property>
+    <property name="buttons">ok</property>
+    <property name="text" translatable="yes">At least one of the players doesn't have valid age(&lt;8) and he/she cannot play DVONN!</property>
+    <signal name="close" handler="gtk_widget_hide" swapped="no"/>
+    <signal name="response" handler="gtk_widget_hide" swapped="no"/>
+    <child internal-child="vbox">
+      <object class="GtkBox" id="messagedialog-vbox">
+        <property name="can_focus">False</property>
+        <property name="orientation">vertical</property>
+        <property name="spacing">2</property>
+        <child internal-child="action_area">
+          <object class="GtkButtonBox" id="messagedialog-action_area">
+            <property name="can_focus">False</property>
+            <property name="layout_style">end</property>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="pack_type">end</property>
+            <property name="position">0</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+  </object>
+  <object class="GtkMessageDialog" id="end_game">
+    <property name="can_focus">False</property>
+    <property name="border_width">5</property>
+    <property name="window_position">center</property>
+    <property name="type_hint">dialog</property>
+    <property name="skip_taskbar_hint">True</property>
+    <property name="buttons">ok</property>
+    <property name="text" translatable="yes">Game Ended!</property>
+    <property name="secondary_text" translatable="yes">White Player Won! Congratulations!</property>
+    <signal name="close" handler="gtk_main_quit" swapped="no"/>
+    <signal name="response" handler="on_end_game_response" swapped="no"/>
+    <child internal-child="vbox">
+      <object class="GtkBox" id="messagedialog-vbox6">
+        <property name="can_focus">False</property>
+        <property name="orientation">vertical</property>
+        <property name="spacing">2</property>
+        <child internal-child="action_area">
+          <object class="GtkButtonBox" id="messagedialog-action_area6">
+            <property name="can_focus">False</property>
+            <property name="layout_style">center</property>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="pack_type">end</property>
+            <property name="position">0</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkImage" id="winner">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="pixbuf">hexagon_iconn_white.png</property>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">2</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="play_again">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="label" translatable="yes">
+Do you want to play again?!</property>
+            <attributes>
+              <attribute name="font-desc" value="Comic Sans MS Bold 13"/>
+            </attributes>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">3</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+  </object>
+  <object class="GtkImage" id="image_0_0">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="xalign">0</property>
+    <property name="yalign">0</property>
+    <property name="pixbuf">hexagon_iconn.png</property>
+  </object>
+  <object class="GtkImage" id="image_0_1">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="xalign">0</property>
+    <property name="yalign">0</property>
+    <property name="pixbuf">hexagon_iconn.png</property>
+  </object>
+  <object class="GtkImage" id="image_0_2">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="xalign">0</property>
+    <property name="yalign">0</property>
+    <property name="pixbuf">hexagon_iconn.png</property>
+  </object>
+  <object class="GtkImage" id="image_0_3">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="xalign">0</property>
+    <property name="yalign">0</property>
+    <property name="pixbuf">hexagon_iconn.png</property>
+  </object>
+  <object class="GtkImage" id="image_0_4">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="xalign">0</property>
+    <property name="yalign">0</property>
+    <property name="pixbuf">hexagon_iconn.png</property>
+  </object>
+  <object class="GtkImage" id="image_0_5">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="xalign">0</property>
+    <property name="yalign">0</property>
+    <property name="pixbuf">hexagon_iconn.png</property>
+  </object>
+  <object class="GtkImage" id="image_0_6">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="xalign">0</property>
+    <property name="yalign">0</property>
+    <property name="pixbuf">hexagon_iconn.png</property>
+  </object>
+  <object class="GtkImage" id="image_0_7">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="xalign">0</property>
+    <property name="yalign">0</property>
+    <property name="pixbuf">hexagon_iconn.png</property>
+  </object>
+  <object class="GtkImage" id="image_0_8">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="xalign">0</property>
+    <property name="yalign">0</property>
+    <property name="pixbuf">hexagon_iconn.png</property>
+  </object>
+  <object class="GtkImage" id="image_0_9">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="xalign">0</property>
+    <property name="yalign">0</property>
+    <property name="pixbuf">hexagon_iconn.png</property>
+  </object>
+  <object class="GtkImage" id="image_1_0">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="xalign">0</property>
+    <property name="yalign">0</property>
+    <property name="pixbuf">hexagon_iconn.png</property>
+  </object>
+  <object class="GtkImage" id="image_1_1">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="xalign">0</property>
+    <property name="yalign">0</property>
+    <property name="pixbuf">hexagon_iconn.png</property>
+  </object>
+  <object class="GtkImage" id="image_1_10">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="xalign">0</property>
+    <property name="yalign">0</property>
+    <property name="pixbuf">hexagon_iconn.png</property>
+  </object>
+  <object class="GtkImage" id="image_1_2">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="xalign">0</property>
+    <property name="yalign">0</property>
+    <property name="pixbuf">hexagon_iconn.png</property>
+  </object>
+  <object class="GtkImage" id="image_1_3">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="xalign">0</property>
+    <property name="yalign">0</property>
+    <property name="pixbuf">hexagon_iconn.png</property>
+  </object>
+  <object class="GtkImage" id="image_1_4">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="xalign">0</property>
+    <property name="yalign">0</property>
+    <property name="pixbuf">hexagon_iconn.png</property>
+  </object>
+  <object class="GtkImage" id="image_1_5">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="xalign">0</property>
+    <property name="yalign">0</property>
+    <property name="pixbuf">hexagon_iconn.png</property>
+  </object>
+  <object class="GtkImage" id="image_1_6">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="xalign">0</property>
+    <property name="yalign">0</property>
+    <property name="pixbuf">hexagon_iconn.png</property>
+  </object>
+  <object class="GtkImage" id="image_1_7">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="xalign">0</property>
+    <property name="yalign">0</property>
+    <property name="pixbuf">hexagon_iconn.png</property>
+  </object>
+  <object class="GtkImage" id="image_1_8">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="xalign">0</property>
+    <property name="yalign">0</property>
+    <property name="pixbuf">hexagon_iconn.png</property>
+  </object>
+  <object class="GtkImage" id="image_1_9">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="xalign">0</property>
+    <property name="yalign">0</property>
+    <property name="pixbuf">hexagon_iconn.png</property>
+  </object>
+  <object class="GtkImage" id="image_2_0">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="xalign">0</property>
+    <property name="yalign">0</property>
+    <property name="pixbuf">hexagon_iconn.png</property>
+  </object>
+  <object class="GtkImage" id="image_2_1">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="xalign">0</property>
+    <property name="yalign">0</property>
+    <property name="pixbuf">hexagon_iconn.png</property>
+  </object>
+  <object class="GtkImage" id="image_2_10">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="xalign">0</property>
+    <property name="yalign">0</property>
+    <property name="pixbuf">hexagon_iconn.png</property>
+  </object>
+  <object class="GtkImage" id="image_2_11">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="xalign">0</property>
+    <property name="yalign">0</property>
+    <property name="pixbuf">hexagon_iconn.png</property>
+  </object>
+  <object class="GtkImage" id="image_2_2">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="xalign">0</property>
+    <property name="yalign">0</property>
+    <property name="pixbuf">hexagon_iconn.png</property>
+  </object>
+  <object class="GtkImage" id="image_2_3">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="xalign">0</property>
+    <property name="yalign">0</property>
+    <property name="pixbuf">hexagon_iconn.png</property>
+  </object>
+  <object class="GtkImage" id="image_2_4">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="xalign">0</property>
+    <property name="yalign">0</property>
+    <property name="pixbuf">hexagon_iconn.png</property>
+  </object>
+  <object class="GtkImage" id="image_2_5">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="xalign">0</property>
+    <property name="yalign">0</property>
+    <property name="pixbuf">hexagon_iconn.png</property>
+  </object>
+  <object class="GtkImage" id="image_2_6">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="xalign">0</property>
+    <property name="yalign">0</property>
+    <property name="pixbuf">hexagon_iconn.png</property>
+  </object>
+  <object class="GtkImage" id="image_2_7">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="xalign">0</property>
+    <property name="yalign">0</property>
+    <property name="pixbuf">hexagon_iconn.png</property>
+  </object>
+  <object class="GtkImage" id="image_2_8">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="xalign">0</property>
+    <property name="yalign">0</property>
+    <property name="pixbuf">hexagon_iconn.png</property>
+  </object>
+  <object class="GtkImage" id="image_2_9">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="xalign">0</property>
+    <property name="yalign">0</property>
+    <property name="pixbuf">hexagon_iconn.png</property>
+  </object>
+  <object class="GtkImage" id="image_3_0">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="xalign">0</property>
+    <property name="yalign">0</property>
+    <property name="pixbuf">hexagon_iconn.png</property>
+  </object>
+  <object class="GtkImage" id="image_3_1">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="xalign">0</property>
+    <property name="yalign">0</property>
+    <property name="pixbuf">hexagon_iconn.png</property>
+  </object>
+  <object class="GtkImage" id="image_3_10">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="xalign">0</property>
+    <property name="yalign">0</property>
+    <property name="pixbuf">hexagon_iconn.png</property>
+  </object>
+  <object class="GtkImage" id="image_3_2">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="xalign">0</property>
+    <property name="yalign">0</property>
+    <property name="pixbuf">hexagon_iconn.png</property>
+  </object>
+  <object class="GtkImage" id="image_3_3">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="xalign">0</property>
+    <property name="yalign">0</property>
+    <property name="pixbuf">hexagon_iconn.png</property>
+  </object>
+  <object class="GtkImage" id="image_3_4">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="xalign">0</property>
+    <property name="yalign">0</property>
+    <property name="pixbuf">hexagon_iconn.png</property>
+  </object>
+  <object class="GtkImage" id="image_3_5">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="xalign">0</property>
+    <property name="yalign">0</property>
+    <property name="pixbuf">hexagon_iconn.png</property>
+  </object>
+  <object class="GtkImage" id="image_3_6">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="xalign">0</property>
+    <property name="yalign">0</property>
+    <property name="pixbuf">hexagon_iconn.png</property>
+  </object>
+  <object class="GtkImage" id="image_3_7">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="xalign">0</property>
+    <property name="yalign">0</property>
+    <property name="pixbuf">hexagon_iconn.png</property>
+  </object>
+  <object class="GtkImage" id="image_3_8">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="xalign">0</property>
+    <property name="yalign">0</property>
+    <property name="pixbuf">hexagon_iconn.png</property>
+  </object>
+  <object class="GtkImage" id="image_3_9">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="xalign">0</property>
+    <property name="yalign">0</property>
+    <property name="pixbuf">hexagon_iconn.png</property>
+  </object>
+  <object class="GtkImage" id="image_4_0">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="xalign">0</property>
+    <property name="yalign">0</property>
+    <property name="pixbuf">hexagon_iconn.png</property>
+  </object>
+  <object class="GtkImage" id="image_4_1">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="xalign">0</property>
+    <property name="yalign">0</property>
+    <property name="pixbuf">hexagon_iconn.png</property>
+  </object>
+  <object class="GtkImage" id="image_4_2">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="xalign">0</property>
+    <property name="yalign">0</property>
+    <property name="pixbuf">hexagon_iconn.png</property>
+  </object>
+  <object class="GtkImage" id="image_4_3">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="xalign">0</property>
+    <property name="yalign">0</property>
+    <property name="pixbuf">hexagon_iconn.png</property>
+  </object>
+  <object class="GtkImage" id="image_4_4">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="xalign">0</property>
+    <property name="yalign">0</property>
+    <property name="pixbuf">hexagon_iconn.png</property>
+  </object>
+  <object class="GtkImage" id="image_4_5">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="xalign">0</property>
+    <property name="yalign">0</property>
+    <property name="pixbuf">hexagon_iconn.png</property>
+  </object>
+  <object class="GtkImage" id="image_4_6">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="xalign">0</property>
+    <property name="yalign">0</property>
+    <property name="pixbuf">hexagon_iconn.png</property>
+  </object>
+  <object class="GtkImage" id="image_4_7">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="xalign">0</property>
+    <property name="yalign">0</property>
+    <property name="pixbuf">hexagon_iconn.png</property>
+  </object>
+  <object class="GtkImage" id="image_4_8">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="xalign">0</property>
+    <property name="yalign">0</property>
+    <property name="pixbuf">hexagon_iconn.png</property>
+  </object>
+  <object class="GtkImage" id="image_4_9">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="xalign">0</property>
+    <property name="yalign">0</property>
+    <property name="pixbuf">hexagon_iconn.png</property>
+  </object>
+  <object class="GtkWindow" id="dvonn_board">
+    <property name="width_request">950</property>
+    <property name="height_request">430</property>
+    <property name="can_focus">False</property>
+    <property name="border_width">1</property>
+    <property name="window_position">center</property>
+    <property name="destroy_with_parent">True</property>
+    <signal name="destroy" handler="on_dvonn_board_2_player_destroy" swapped="no"/>
+    <child>
+      <object class="GtkBox" id="box">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <property name="orientation">vertical</property>
+        <child>
+          <object class="GtkToolbar" id="toolbar">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">0</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkScrolledWindow" id="scrolled_window">
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="hexpand">True</property>
+            <property name="vexpand">True</property>
+            <property name="shadow_type">in</property>
+            <child>
+              <object class="GtkViewport" id="viewport">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <child>
+                  <object class="GtkFixed" id="fixed">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <child>
+                      <object class="GtkButton" id="button_0_0">
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">True</property>
+                        <property name="image">image_0_0</property>
+                        <property name="xalign">0</property>
+                        <property name="yalign">0</property>
+                        <property name="image_position">bottom</property>
+                        <property name="always_show_image">True</property>
+                        <signal name="clicked" handler="on_button_clicked" swapped="no"/>
+                      </object>
+                      <packing>
+                        <property name="x">138</property>
+                        <property name="y">68</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="button_0_1">
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">True</property>
+                        <property name="image">image_0_1</property>
+                        <property name="xalign">0</property>
+                        <property name="yalign">0</property>
+                        <property name="image_position">bottom</property>
+                        <property name="always_show_image">True</property>
+                        <signal name="clicked" handler="on_button_clicked" swapped="no"/>
+                      </object>
+                      <packing>
+                        <property name="x">188</property>
+                        <property name="y">68</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="button_0_2">
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">True</property>
+                        <property name="image">image_0_2</property>
+                        <property name="xalign">0</property>
+                        <property name="yalign">0</property>
+                        <property name="image_position">bottom</property>
+                        <property name="always_show_image">True</property>
+                        <signal name="clicked" handler="on_button_clicked" swapped="no"/>
+                      </object>
+                      <packing>
+                        <property name="x">238</property>
+                        <property name="y">68</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="button_0_3">
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">True</property>
+                        <property name="image">image_0_3</property>
+                        <property name="xalign">0</property>
+                        <property name="yalign">0</property>
+                        <property name="image_position">bottom</property>
+                        <property name="always_show_image">True</property>
+                        <signal name="clicked" handler="on_button_clicked" swapped="no"/>
+                      </object>
+                      <packing>
+                        <property name="x">288</property>
+                        <property name="y">68</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="button_0_4">
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">True</property>
+                        <property name="image">image_0_4</property>
+                        <property name="xalign">0</property>
+                        <property name="yalign">0</property>
+                        <property name="image_position">bottom</property>
+                        <property name="always_show_image">True</property>
+                        <signal name="clicked" handler="on_button_clicked" swapped="no"/>
+                      </object>
+                      <packing>
+                        <property name="x">338</property>
+                        <property name="y">68</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="button_0_5">
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">True</property>
+                        <property name="image">image_0_5</property>
+                        <property name="xalign">0</property>
+                        <property name="yalign">0</property>
+                        <property name="image_position">bottom</property>
+                        <property name="always_show_image">True</property>
+                        <signal name="clicked" handler="on_button_clicked" swapped="no"/>
+                      </object>
+                      <packing>
+                        <property name="x">388</property>
+                        <property name="y">68</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="button_0_6">
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">True</property>
+                        <property name="image">image_0_6</property>
+                        <property name="xalign">0</property>
+                        <property name="yalign">0</property>
+                        <property name="image_position">bottom</property>
+                        <property name="always_show_image">True</property>
+                        <signal name="clicked" handler="on_button_clicked" swapped="no"/>
+                      </object>
+                      <packing>
+                        <property name="x">438</property>
+                        <property name="y">68</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="button_0_7">
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">True</property>
+                        <property name="image">image_0_7</property>
+                        <property name="xalign">0</property>
+                        <property name="yalign">0</property>
+                        <property name="image_position">bottom</property>
+                        <property name="always_show_image">True</property>
+                        <signal name="clicked" handler="on_button_clicked" swapped="no"/>
+                      </object>
+                      <packing>
+                        <property name="x">488</property>
+                        <property name="y">68</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="button_0_8">
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">True</property>
+                        <property name="image">image_0_8</property>
+                        <property name="xalign">0</property>
+                        <property name="yalign">0</property>
+                        <property name="image_position">bottom</property>
+                        <property name="always_show_image">True</property>
+                        <signal name="clicked" handler="on_button_clicked" swapped="no"/>
+                      </object>
+                      <packing>
+                        <property name="x">538</property>
+                        <property name="y">68</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="button_0_9">
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">True</property>
+                        <property name="image">image_0_9</property>
+                        <property name="xalign">0</property>
+                        <property name="yalign">0</property>
+                        <property name="image_position">bottom</property>
+                        <property name="always_show_image">True</property>
+                        <signal name="clicked" handler="on_button_clicked" swapped="no"/>
+                      </object>
+                      <packing>
+                        <property name="x">588</property>
+                        <property name="y">68</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="button_1_0">
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">True</property>
+                        <property name="image">image_1_0</property>
+                        <property name="xalign">0</property>
+                        <property name="yalign">0</property>
+                        <property name="image_position">bottom</property>
+                        <property name="always_show_image">True</property>
+                        <signal name="clicked" handler="on_button_clicked" swapped="no"/>
+                      </object>
+                      <packing>
+                        <property name="x">112</property>
+                        <property name="y">113</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="button_1_1">
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">True</property>
+                        <property name="image">image_1_1</property>
+                        <property name="xalign">0</property>
+                        <property name="yalign">0</property>
+                        <property name="image_position">bottom</property>
+                        <property name="always_show_image">True</property>
+                        <signal name="clicked" handler="on_button_clicked" swapped="no"/>
+                      </object>
+                      <packing>
+                        <property name="x">162</property>
+                        <property name="y">113</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="button_1_2">
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">True</property>
+                        <property name="image">image_1_2</property>
+                        <property name="xalign">0</property>
+                        <property name="yalign">0</property>
+                        <property name="image_position">bottom</property>
+                        <property name="always_show_image">True</property>
+                        <signal name="clicked" handler="on_button_clicked" swapped="no"/>
+                      </object>
+                      <packing>
+                        <property name="x">212</property>
+                        <property name="y">113</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="button_1_3">
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">True</property>
+                        <property name="image">image_1_3</property>
+                        <property name="xalign">0</property>
+                        <property name="yalign">0</property>
+                        <property name="image_position">bottom</property>
+                        <property name="always_show_image">True</property>
+                        <signal name="clicked" handler="on_button_clicked" swapped="no"/>
+                      </object>
+                      <packing>
+                        <property name="x">262</property>
+                        <property name="y">113</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="button_1_4">
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">True</property>
+                        <property name="image">image_1_4</property>
+                        <property name="xalign">0</property>
+                        <property name="yalign">0</property>
+                        <property name="image_position">bottom</property>
+                        <property name="always_show_image">True</property>
+                        <signal name="clicked" handler="on_button_clicked" swapped="no"/>
+                      </object>
+                      <packing>
+                        <property name="x">312</property>
+                        <property name="y">113</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="button_1_5">
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">True</property>
+                        <property name="image">image_1_5</property>
+                        <property name="xalign">0</property>
+                        <property name="yalign">0</property>
+                        <property name="image_position">bottom</property>
+                        <property name="always_show_image">True</property>
+                        <signal name="clicked" handler="on_button_clicked" swapped="no"/>
+                      </object>
+                      <packing>
+                        <property name="x">362</property>
+                        <property name="y">113</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="button_1_6">
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">True</property>
+                        <property name="image">image_1_6</property>
+                        <property name="xalign">0</property>
+                        <property name="yalign">0</property>
+                        <property name="image_position">bottom</property>
+                        <property name="always_show_image">True</property>
+                        <signal name="clicked" handler="on_button_clicked" swapped="no"/>
+                      </object>
+                      <packing>
+                        <property name="x">412</property>
+                        <property name="y">113</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="button_1_7">
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">True</property>
+                        <property name="image">image_1_7</property>
+                        <property name="xalign">0</property>
+                        <property name="yalign">0</property>
+                        <property name="image_position">bottom</property>
+                        <property name="always_show_image">True</property>
+                        <signal name="clicked" handler="on_button_clicked" swapped="no"/>
+                      </object>
+                      <packing>
+                        <property name="x">462</property>
+                        <property name="y">113</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="button_1_8">
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">True</property>
+                        <property name="image">image_1_8</property>
+                        <property name="xalign">0</property>
+                        <property name="yalign">0</property>
+                        <property name="image_position">bottom</property>
+                        <property name="always_show_image">True</property>
+                        <signal name="clicked" handler="on_button_clicked" swapped="no"/>
+                      </object>
+                      <packing>
+                        <property name="x">512</property>
+                        <property name="y">113</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="button_1_9">
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">True</property>
+                        <property name="image">image_1_9</property>
+                        <property name="xalign">0</property>
+                        <property name="yalign">0</property>
+                        <property name="image_position">bottom</property>
+                        <property name="always_show_image">True</property>
+                        <signal name="clicked" handler="on_button_clicked" swapped="no"/>
+                      </object>
+                      <packing>
+                        <property name="x">562</property>
+                        <property name="y">113</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="button_1_10">
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">True</property>
+                        <property name="image">image_1_10</property>
+                        <property name="xalign">0</property>
+                        <property name="yalign">0</property>
+                        <property name="image_position">bottom</property>
+                        <property name="always_show_image">True</property>
+                        <signal name="clicked" handler="on_button_clicked" swapped="no"/>
+                      </object>
+                      <packing>
+                        <property name="x">612</property>
+                        <property name="y">113</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="button_2_0">
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">True</property>
+                        <property name="image">image_2_0</property>
+                        <property name="xalign">0</property>
+                        <property name="yalign">0</property>
+                        <property name="image_position">bottom</property>
+                        <property name="always_show_image">True</property>
+                        <signal name="clicked" handler="on_button_clicked" swapped="no"/>
+                      </object>
+                      <packing>
+                        <property name="x">88</property>
+                        <property name="y">158</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="button_2_1">
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">True</property>
+                        <property name="image">image_2_1</property>
+                        <property name="xalign">0</property>
+                        <property name="yalign">0</property>
+                        <property name="image_position">bottom</property>
+                        <property name="always_show_image">True</property>
+                        <signal name="clicked" handler="on_button_clicked" swapped="no"/>
+                      </object>
+                      <packing>
+                        <property name="x">138</property>
+                        <property name="y">158</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="button_2_2">
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">True</property>
+                        <property name="image">image_2_2</property>
+                        <property name="xalign">0</property>
+                        <property name="yalign">0</property>
+                        <property name="image_position">bottom</property>
+                        <property name="always_show_image">True</property>
+                        <signal name="clicked" handler="on_button_clicked" swapped="no"/>
+                      </object>
+                      <packing>
+                        <property name="x">188</property>
+                        <property name="y">158</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="button_2_3">
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">True</property>
+                        <property name="image">image_2_3</property>
+                        <property name="xalign">0</property>
+                        <property name="yalign">0</property>
+                        <property name="image_position">bottom</property>
+                        <property name="always_show_image">True</property>
+                        <signal name="clicked" handler="on_button_clicked" swapped="no"/>
+                      </object>
+                      <packing>
+                        <property name="x">238</property>
+                        <property name="y">158</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="button_2_4">
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">True</property>
+                        <property name="image">image_2_4</property>
+                        <property name="xalign">0</property>
+                        <property name="yalign">0</property>
+                        <property name="image_position">bottom</property>
+                        <property name="always_show_image">True</property>
+                        <signal name="clicked" handler="on_button_clicked" swapped="no"/>
+                      </object>
+                      <packing>
+                        <property name="x">288</property>
+                        <property name="y">158</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="button_2_5">
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">True</property>
+                        <property name="image">image_2_5</property>
+                        <property name="xalign">0</property>
+                        <property name="yalign">0</property>
+                        <property name="image_position">bottom</property>
+                        <property name="always_show_image">True</property>
+                        <signal name="clicked" handler="on_button_clicked" swapped="no"/>
+                      </object>
+                      <packing>
+                        <property name="x">338</property>
+                        <property name="y">158</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="button_2_6">
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">True</property>
+                        <property name="image">image_2_6</property>
+                        <property name="xalign">0</property>
+                        <property name="yalign">0</property>
+                        <property name="image_position">bottom</property>
+                        <property name="always_show_image">True</property>
+                        <signal name="clicked" handler="on_button_clicked" swapped="no"/>
+                      </object>
+                      <packing>
+                        <property name="x">388</property>
+                        <property name="y">158</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="button_2_7">
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">True</property>
+                        <property name="image">image_2_7</property>
+                        <property name="xalign">0</property>
+                        <property name="yalign">0</property>
+                        <property name="image_position">bottom</property>
+                        <property name="always_show_image">True</property>
+                        <signal name="clicked" handler="on_button_clicked" swapped="no"/>
+                      </object>
+                      <packing>
+                        <property name="x">438</property>
+                        <property name="y">158</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="button_2_8">
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">True</property>
+                        <property name="image">image_2_8</property>
+                        <property name="xalign">0</property>
+                        <property name="yalign">0</property>
+                        <property name="image_position">bottom</property>
+                        <property name="always_show_image">True</property>
+                        <signal name="clicked" handler="on_button_clicked" swapped="no"/>
+                      </object>
+                      <packing>
+                        <property name="x">488</property>
+                        <property name="y">158</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="button_2_9">
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">True</property>
+                        <property name="image">image_2_9</property>
+                        <property name="xalign">0</property>
+                        <property name="yalign">0</property>
+                        <property name="image_position">bottom</property>
+                        <property name="always_show_image">True</property>
+                        <signal name="clicked" handler="on_button_clicked" swapped="no"/>
+                      </object>
+                      <packing>
+                        <property name="x">538</property>
+                        <property name="y">158</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="button_2_10">
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">True</property>
+                        <property name="image">image_2_10</property>
+                        <property name="xalign">0</property>
+                        <property name="yalign">0</property>
+                        <property name="image_position">bottom</property>
+                        <property name="always_show_image">True</property>
+                        <signal name="clicked" handler="on_button_clicked" swapped="no"/>
+                      </object>
+                      <packing>
+                        <property name="x">588</property>
+                        <property name="y">158</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="button_2_11">
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">True</property>
+                        <property name="image">image_2_11</property>
+                        <property name="xalign">0</property>
+                        <property name="yalign">0</property>
+                        <property name="image_position">bottom</property>
+                        <property name="always_show_image">True</property>
+                        <signal name="clicked" handler="on_button_clicked" swapped="no"/>
+                      </object>
+                      <packing>
+                        <property name="x">638</property>
+                        <property name="y">158</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="button_3_0">
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">True</property>
+                        <property name="image">image_3_0</property>
+                        <property name="xalign">0</property>
+                        <property name="yalign">0</property>
+                        <property name="image_position">bottom</property>
+                        <property name="always_show_image">True</property>
+                        <signal name="clicked" handler="on_button_clicked" swapped="no"/>
+                      </object>
+                      <packing>
+                        <property name="x">112</property>
+                        <property name="y">203</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="button_3_1">
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">True</property>
+                        <property name="image">image_3_1</property>
+                        <property name="xalign">0</property>
+                        <property name="yalign">0</property>
+                        <property name="image_position">bottom</property>
+                        <property name="always_show_image">True</property>
+                        <signal name="clicked" handler="on_button_clicked" swapped="no"/>
+                      </object>
+                      <packing>
+                        <property name="x">162</property>
+                        <property name="y">203</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="button_3_2">
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">True</property>
+                        <property name="image">image_3_2</property>
+                        <property name="xalign">0</property>
+                        <property name="yalign">0</property>
+                        <property name="image_position">bottom</property>
+                        <property name="always_show_image">True</property>
+                        <signal name="clicked" handler="on_button_clicked" swapped="no"/>
+                      </object>
+                      <packing>
+                        <property name="x">212</property>
+                        <property name="y">203</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="button_3_3">
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">True</property>
+                        <property name="image">image_3_3</property>
+                        <property name="xalign">0</property>
+                        <property name="yalign">0</property>
+                        <property name="image_position">bottom</property>
+                        <property name="always_show_image">True</property>
+                        <signal name="clicked" handler="on_button_clicked" swapped="no"/>
+                      </object>
+                      <packing>
+                        <property name="x">262</property>
+                        <property name="y">203</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="button_3_4">
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">True</property>
+                        <property name="image">image_3_4</property>
+                        <property name="xalign">0</property>
+                        <property name="yalign">0</property>
+                        <property name="image_position">bottom</property>
+                        <property name="always_show_image">True</property>
+                        <signal name="clicked" handler="on_button_clicked" swapped="no"/>
+                      </object>
+                      <packing>
+                        <property name="x">312</property>
+                        <property name="y">203</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="button_3_5">
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">True</property>
+                        <property name="image">image_3_5</property>
+                        <property name="xalign">0</property>
+                        <property name="yalign">0</property>
+                        <property name="image_position">bottom</property>
+                        <property name="always_show_image">True</property>
+                        <signal name="clicked" handler="on_button_clicked" swapped="no"/>
+                      </object>
+                      <packing>
+                        <property name="x">362</property>
+                        <property name="y">203</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="button_3_6">
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">True</property>
+                        <property name="image">image_3_6</property>
+                        <property name="xalign">0</property>
+                        <property name="yalign">0</property>
+                        <property name="image_position">bottom</property>
+                        <property name="always_show_image">True</property>
+                        <signal name="clicked" handler="on_button_clicked" swapped="no"/>
+                      </object>
+                      <packing>
+                        <property name="x">412</property>
+                        <property name="y">203</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="button_3_7">
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">True</property>
+                        <property name="image">image_3_7</property>
+                        <property name="xalign">0</property>
+                        <property name="yalign">0</property>
+                        <property name="image_position">bottom</property>
+                        <property name="always_show_image">True</property>
+                        <signal name="clicked" handler="on_button_clicked" swapped="no"/>
+                      </object>
+                      <packing>
+                        <property name="x">462</property>
+                        <property name="y">203</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="button_3_8">
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">True</property>
+                        <property name="image">image_3_8</property>
+                        <property name="xalign">0</property>
+                        <property name="yalign">0</property>
+                        <property name="image_position">bottom</property>
+                        <property name="always_show_image">True</property>
+                        <signal name="clicked" handler="on_button_clicked" swapped="no"/>
+                      </object>
+                      <packing>
+                        <property name="x">512</property>
+                        <property name="y">203</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="button_3_9">
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">True</property>
+                        <property name="image">image_3_9</property>
+                        <property name="xalign">0</property>
+                        <property name="yalign">0</property>
+                        <property name="image_position">bottom</property>
+                        <property name="always_show_image">True</property>
+                        <signal name="clicked" handler="on_button_clicked" swapped="no"/>
+                      </object>
+                      <packing>
+                        <property name="x">562</property>
+                        <property name="y">203</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="button_3_10">
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">True</property>
+                        <property name="image">image_3_10</property>
+                        <property name="xalign">0</property>
+                        <property name="yalign">0</property>
+                        <property name="image_position">bottom</property>
+                        <property name="always_show_image">True</property>
+                        <signal name="clicked" handler="on_button_clicked" swapped="no"/>
+                      </object>
+                      <packing>
+                        <property name="x">612</property>
+                        <property name="y">203</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="button_4_0">
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">True</property>
+                        <property name="image">image_4_0</property>
+                        <property name="xalign">0</property>
+                        <property name="yalign">0</property>
+                        <property name="image_position">bottom</property>
+                        <property name="always_show_image">True</property>
+                        <signal name="clicked" handler="on_button_clicked" swapped="no"/>
+                      </object>
+                      <packing>
+                        <property name="x">136</property>
+                        <property name="y">248</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="button_4_1">
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">True</property>
+                        <property name="image">image_4_1</property>
+                        <property name="xalign">0</property>
+                        <property name="yalign">0</property>
+                        <property name="image_position">bottom</property>
+                        <property name="always_show_image">True</property>
+                        <signal name="clicked" handler="on_button_clicked" swapped="no"/>
+                      </object>
+                      <packing>
+                        <property name="x">186</property>
+                        <property name="y">248</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="button_4_2">
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">True</property>
+                        <property name="image">image_4_2</property>
+                        <property name="xalign">0</property>
+                        <property name="yalign">0</property>
+                        <property name="image_position">bottom</property>
+                        <property name="always_show_image">True</property>
+                        <signal name="clicked" handler="on_button_clicked" swapped="no"/>
+                      </object>
+                      <packing>
+                        <property name="x">236</property>
+                        <property name="y">248</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="button_4_3">
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">True</property>
+                        <property name="image">image_4_3</property>
+                        <property name="xalign">0</property>
+                        <property name="yalign">0</property>
+                        <property name="image_position">bottom</property>
+                        <property name="always_show_image">True</property>
+                        <signal name="clicked" handler="on_button_clicked" swapped="no"/>
+                      </object>
+                      <packing>
+                        <property name="x">286</property>
+                        <property name="y">248</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="button_4_4">
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">True</property>
+                        <property name="image">image_4_4</property>
+                        <property name="xalign">0</property>
+                        <property name="yalign">0</property>
+                        <property name="image_position">bottom</property>
+                        <property name="always_show_image">True</property>
+                        <signal name="clicked" handler="on_button_clicked" swapped="no"/>
+                      </object>
+                      <packing>
+                        <property name="x">336</property>
+                        <property name="y">248</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="button_4_5">
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">True</property>
+                        <property name="image">image_4_5</property>
+                        <property name="xalign">0</property>
+                        <property name="yalign">0</property>
+                        <property name="image_position">bottom</property>
+                        <property name="always_show_image">True</property>
+                        <signal name="clicked" handler="on_button_clicked" swapped="no"/>
+                      </object>
+                      <packing>
+                        <property name="x">386</property>
+                        <property name="y">248</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="button_4_6">
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">True</property>
+                        <property name="image">image_4_6</property>
+                        <property name="xalign">0</property>
+                        <property name="yalign">0</property>
+                        <property name="image_position">bottom</property>
+                        <property name="always_show_image">True</property>
+                        <signal name="clicked" handler="on_button_clicked" swapped="no"/>
+                      </object>
+                      <packing>
+                        <property name="x">436</property>
+                        <property name="y">248</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="button_4_7">
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">True</property>
+                        <property name="image">image_4_7</property>
+                        <property name="xalign">0</property>
+                        <property name="yalign">0</property>
+                        <property name="image_position">bottom</property>
+                        <property name="always_show_image">True</property>
+                        <signal name="clicked" handler="on_button_clicked" swapped="no"/>
+                      </object>
+                      <packing>
+                        <property name="x">486</property>
+                        <property name="y">248</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="button_4_8">
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">True</property>
+                        <property name="image">image_4_8</property>
+                        <property name="xalign">0</property>
+                        <property name="yalign">0</property>
+                        <property name="image_position">bottom</property>
+                        <property name="always_show_image">True</property>
+                        <signal name="clicked" handler="on_button_clicked" swapped="no"/>
+                      </object>
+                      <packing>
+                        <property name="x">536</property>
+                        <property name="y">248</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="button_4_9">
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">True</property>
+                        <property name="image">image_4_9</property>
+                        <property name="xalign">0</property>
+                        <property name="yalign">0</property>
+                        <property name="image_position">bottom</property>
+                        <property name="always_show_image">True</property>
+                        <signal name="clicked" handler="on_button_clicked" swapped="no"/>
+                      </object>
+                      <packing>
+                        <property name="x">586</property>
+                        <property name="y">248</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLabel" id="black_player">
+                        <property name="width_request">100</property>
+                        <property name="height_request">40</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="xalign">0</property>
+                        <property name="label" translatable="yes">label</property>
+                      </object>
+                      <packing>
+                        <property name="x">799</property>
+                        <property name="y">129</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLabel" id="white_player">
+                        <property name="width_request">100</property>
+                        <property name="height_request">40</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="xalign">0</property>
+                        <property name="label" translatable="yes">label</property>
+                      </object>
+                      <packing>
+                        <property name="x">799</property>
+                        <property name="y">69</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLabel" id="yellow_player">
+                        <property name="width_request">100</property>
+                        <property name="height_request">40</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="xalign">0</property>
+                        <property name="label" translatable="yes">label</property>
+                      </object>
+                      <packing>
+                        <property name="x">799</property>
+                        <property name="y">189</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkImage" id="black_player_image">
+                        <property name="width_request">36</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="pixbuf">hexagon_icon_black.png</property>
+                      </object>
+                      <packing>
+                        <property name="x">752</property>
+                        <property name="y">127</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkImage" id="white_player_image">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="pixbuf">hexagon_icon_white.png</property>
+                      </object>
+                      <packing>
+                        <property name="x">752</property>
+                        <property name="y">65</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkImage" id="yellow_player_image">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="pixbuf">hexagon_icon_yellow.png</property>
+                      </object>
+                      <packing>
+                        <property name="x">752</property>
+                        <property name="y">187</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkSeparator" id="separator1">
+                        <property name="width_request">6</property>
+                        <property name="height_request">299</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="orientation">vertical</property>
+                      </object>
+                      <packing>
+                        <property name="x">700</property>
+                        <property name="y">25</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLabel" id="black_count">
+                        <property name="width_request">32</property>
+                        <property name="height_request">30</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                      </object>
+                      <packing>
+                        <property name="x">715</property>
+                        <property name="y">136</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLabel" id="white_count">
+                        <property name="width_request">32</property>
+                        <property name="height_request">30</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                      </object>
+                      <packing>
+                        <property name="x">715</property>
+                        <property name="y">74</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLabel" id="yellow_count">
+                        <property name="width_request">32</property>
+                        <property name="height_request">30</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                      </object>
+                      <packing>
+                        <property name="x">715</property>
+                        <property name="y">197</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkImage" id="black_turn_image">
+                        <property name="width_request">9</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="pixbuf">arrow.png</property>
+                      </object>
+                      <packing>
+                        <property name="x">695</property>
+                        <property name="y">143</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkImage" id="white_turn_image">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="pixbuf">arrow.png</property>
+                      </object>
+                      <packing>
+                        <property name="x">694</property>
+                        <property name="y">81</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkImage" id="yellow_turn_image">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="pixbuf">arrow.png</property>
+                      </object>
+                      <packing>
+                        <property name="x">694</property>
+                        <property name="y">203</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLabel" id="count_0_0">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="justify">center</property>
+                      </object>
+                      <packing>
+                        <property name="x">157</property>
+                        <property name="y">89</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLabel" id="count_0_1">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="justify">center</property>
+                      </object>
+                      <packing>
+                        <property name="x">207</property>
+                        <property name="y">89</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLabel" id="count_0_2">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="justify">center</property>
+                      </object>
+                      <packing>
+                        <property name="x">257</property>
+                        <property name="y">89</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLabel" id="count_0_3">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="justify">center</property>
+                      </object>
+                      <packing>
+                        <property name="x">307</property>
+                        <property name="y">89</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLabel" id="count_0_4">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="justify">center</property>
+                      </object>
+                      <packing>
+                        <property name="x">357</property>
+                        <property name="y">89</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLabel" id="count_0_5">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="justify">center</property>
+                      </object>
+                      <packing>
+                        <property name="x">407</property>
+                        <property name="y">89</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLabel" id="count_0_6">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="justify">center</property>
+                      </object>
+                      <packing>
+                        <property name="x">457</property>
+                        <property name="y">89</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLabel" id="count_0_7">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="justify">center</property>
+                      </object>
+                      <packing>
+                        <property name="x">507</property>
+                        <property name="y">89</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLabel" id="count_0_8">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="justify">center</property>
+                      </object>
+                      <packing>
+                        <property name="x">557</property>
+                        <property name="y">89</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLabel" id="count_0_9">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="justify">center</property>
+                      </object>
+                      <packing>
+                        <property name="x">607</property>
+                        <property name="y">89</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLabel" id="count_1_0">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="justify">center</property>
+                      </object>
+                      <packing>
+                        <property name="x">131</property>
+                        <property name="y">134</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLabel" id="count_1_1">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="justify">center</property>
+                      </object>
+                      <packing>
+                        <property name="x">181</property>
+                        <property name="y">134</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLabel" id="count_1_2">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="justify">center</property>
+                      </object>
+                      <packing>
+                        <property name="x">231</property>
+                        <property name="y">134</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLabel" id="count_1_3">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="justify">center</property>
+                      </object>
+                      <packing>
+                        <property name="x">281</property>
+                        <property name="y">134</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLabel" id="count_1_4">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="justify">center</property>
+                      </object>
+                      <packing>
+                        <property name="x">331</property>
+                        <property name="y">134</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLabel" id="count_1_5">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="justify">center</property>
+                      </object>
+                      <packing>
+                        <property name="x">381</property>
+                        <property name="y">134</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLabel" id="count_1_6">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="justify">center</property>
+                      </object>
+                      <packing>
+                        <property name="x">431</property>
+                        <property name="y">134</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLabel" id="count_1_7">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="justify">center</property>
+                      </object>
+                      <packing>
+                        <property name="x">481</property>
+                        <property name="y">134</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLabel" id="count_1_8">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="justify">center</property>
+                      </object>
+                      <packing>
+                        <property name="x">531</property>
+                        <property name="y">134</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLabel" id="count_1_9">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="justify">center</property>
+                      </object>
+                      <packing>
+                        <property name="x">581</property>
+                        <property name="y">134</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLabel" id="count_1_10">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="justify">center</property>
+                      </object>
+                      <packing>
+                        <property name="x">631</property>
+                        <property name="y">134</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLabel" id="count_2_0">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="justify">center</property>
+                      </object>
+                      <packing>
+                        <property name="x">107</property>
+                        <property name="y">179</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLabel" id="count_2_1">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="justify">center</property>
+                      </object>
+                      <packing>
+                        <property name="x">157</property>
+                        <property name="y">179</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLabel" id="count_2_2">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="justify">center</property>
+                      </object>
+                      <packing>
+                        <property name="x">207</property>
+                        <property name="y">179</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLabel" id="count_2_3">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="justify">center</property>
+                      </object>
+                      <packing>
+                        <property name="x">257</property>
+                        <property name="y">179</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLabel" id="count_2_4">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="justify">center</property>
+                      </object>
+                      <packing>
+                        <property name="x">307</property>
+                        <property name="y">179</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLabel" id="count_2_5">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="justify">center</property>
+                      </object>
+                      <packing>
+                        <property name="x">357</property>
+                        <property name="y">179</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLabel" id="count_2_6">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="justify">center</property>
+                      </object>
+                      <packing>
+                        <property name="x">407</property>
+                        <property name="y">179</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLabel" id="count_2_7">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="justify">center</property>
+                      </object>
+                      <packing>
+                        <property name="x">457</property>
+                        <property name="y">179</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLabel" id="count_2_8">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="justify">center</property>
+                      </object>
+                      <packing>
+                        <property name="x">507</property>
+                        <property name="y">179</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLabel" id="count_2_9">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="justify">center</property>
+                      </object>
+                      <packing>
+                        <property name="x">557</property>
+                        <property name="y">179</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLabel" id="count_2_10">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="justify">center</property>
+                      </object>
+                      <packing>
+                        <property name="x">607</property>
+                        <property name="y">179</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLabel" id="count_2_11">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="justify">center</property>
+                      </object>
+                      <packing>
+                        <property name="x">657</property>
+                        <property name="y">179</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLabel" id="count_3_0">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="justify">center</property>
+                      </object>
+                      <packing>
+                        <property name="x">131</property>
+                        <property name="y">224</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLabel" id="count_3_1">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="justify">center</property>
+                      </object>
+                      <packing>
+                        <property name="x">181</property>
+                        <property name="y">224</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLabel" id="count_3_2">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="justify">center</property>
+                      </object>
+                      <packing>
+                        <property name="x">231</property>
+                        <property name="y">224</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLabel" id="count_3_3">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="justify">center</property>
+                      </object>
+                      <packing>
+                        <property name="x">281</property>
+                        <property name="y">224</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLabel" id="count_3_4">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="justify">center</property>
+                      </object>
+                      <packing>
+                        <property name="x">331</property>
+                        <property name="y">224</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLabel" id="count_3_5">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="justify">center</property>
+                      </object>
+                      <packing>
+                        <property name="x">381</property>
+                        <property name="y">224</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLabel" id="count_3_6">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="justify">center</property>
+                      </object>
+                      <packing>
+                        <property name="x">431</property>
+                        <property name="y">224</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLabel" id="count_3_7">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="justify">center</property>
+                      </object>
+                      <packing>
+                        <property name="x">481</property>
+                        <property name="y">224</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLabel" id="count_3_8">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="justify">center</property>
+                      </object>
+                      <packing>
+                        <property name="x">531</property>
+                        <property name="y">224</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLabel" id="count_3_9">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="justify">center</property>
+                      </object>
+                      <packing>
+                        <property name="x">581</property>
+                        <property name="y">224</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLabel" id="count_3_10">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="justify">center</property>
+                      </object>
+                      <packing>
+                        <property name="x">631</property>
+                        <property name="y">224</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLabel" id="count_4_0">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="justify">center</property>
+                      </object>
+                      <packing>
+                        <property name="x">155</property>
+                        <property name="y">269</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLabel" id="count_4_1">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="justify">center</property>
+                      </object>
+                      <packing>
+                        <property name="x">205</property>
+                        <property name="y">269</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLabel" id="count_4_2">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="justify">center</property>
+                      </object>
+                      <packing>
+                        <property name="x">255</property>
+                        <property name="y">269</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLabel" id="count_4_3">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="justify">center</property>
+                      </object>
+                      <packing>
+                        <property name="x">305</property>
+                        <property name="y">269</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLabel" id="count_4_4">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="justify">center</property>
+                      </object>
+                      <packing>
+                        <property name="x">355</property>
+                        <property name="y">269</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLabel" id="count_4_5">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="justify">center</property>
+                      </object>
+                      <packing>
+                        <property name="x">405</property>
+                        <property name="y">269</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLabel" id="count_4_6">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="justify">center</property>
+                      </object>
+                      <packing>
+                        <property name="x">455</property>
+                        <property name="y">269</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLabel" id="count_4_7">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="justify">center</property>
+                      </object>
+                      <packing>
+                        <property name="x">505</property>
+                        <property name="y">269</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLabel" id="count_4_8">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="justify">center</property>
+                      </object>
+                      <packing>
+                        <property name="x">555</property>
+                        <property name="y">269</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLabel" id="count_4_9">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="justify">center</property>
+                      </object>
+                      <packing>
+                        <property name="x">605</property>
+                        <property name="y">269</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLabel" id="hint">
+                        <property name="width_request">275</property>
+                        <property name="height_request">22</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="label" translatable="yes">label</property>
+                        <attributes>
+                          <attribute name="font-desc" value="Calibri 12"/>
+                          <attribute name="weight" value="bold"/>
+                          <attribute name="underline" value="True"/>
+                          <attribute name="foreground" value="#cccc00000000"/>
+                        </attributes>
+                      </object>
+                      <packing>
+                        <property name="x">226</property>
+                        <property name="y">24</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLabel" id="phase1">
+                        <property name="width_request">9</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="label" translatable="yes">Phase-1: 
+Place Your Pieces</property>
+                        <attributes>
+                          <attribute name="font-desc" value="Comic Sans MS 12"/>
+                        </attributes>
+                      </object>
+                      <packing>
+                        <property name="x">16</property>
+                        <property name="y">12</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLabel" id="phase2">
+                        <property name="height_request">59</property>
+                        <property name="can_focus">False</property>
+                        <property name="label" translatable="yes">Phase-2: 
+Move Your Pieces!</property>
+                        <attributes>
+                          <attribute name="font-desc" value="Comic Sans MS 12"/>
+                        </attributes>
+                      </object>
+                      <packing>
+                        <property name="x">17</property>
+                        <property name="y">7</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkSeparator" id="separator_2">
+                        <property name="width_request">203</property>
+                        <property name="height_request">19</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                      </object>
+                      <packing>
+                        <property name="x">722</property>
+                        <property name="y">230</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLabel" id="label1">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="xalign">0</property>
+                        <property name="yalign">0</property>
+                        <property name="label" translatable="yes">(C) Bardia 
+bardianm40@gmail.com
+Spring &amp; Summer 2014</property>
+                        <attributes>
+                          <attribute name="font-desc" value="Comic Sans MS 13"/>
+                          <attribute name="foreground" value="#4e4e9a990605"/>
+                        </attributes>
+                      </object>
+                      <packing>
+                        <property name="x">720</property>
+                        <property name="y">250</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="pass">
+                        <property name="label" translatable="yes">Pass!</property>
+                        <property name="width_request">69</property>
+                        <property name="height_request">37</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">True</property>
+                        <signal name="clicked" handler="pass_clicked" swapped="no"/>
+                      </object>
+                      <packing>
+                        <property name="x">739</property>
+                        <property name="y">16</property>
+                      </packing>
+                    </child>
+                  </object>
+                </child>
+              </object>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">1</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkStatusbar" id="statusbar">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="orientation">vertical</property>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">2</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+  </object>
+  <object class="GtkMessageDialog" id="name_message">
+    <property name="can_focus">False</property>
+    <property name="border_width">5</property>
+    <property name="window_position">center</property>
+    <property name="destroy_with_parent">True</property>
+    <property name="type_hint">dialog</property>
+    <property name="skip_taskbar_hint">True</property>
+    <property name="message_type">error</property>
+    <property name="buttons">ok</property>
+    <property name="text" translatable="yes">Please enter all of the players name!</property>
+    <signal name="close" handler="gtk_widget_hide" swapped="no"/>
+    <signal name="response" handler="gtk_widget_hide" swapped="no"/>
+    <child internal-child="vbox">
+      <object class="GtkBox" id="messagedialog-vbox2">
+        <property name="can_focus">False</property>
+        <property name="orientation">vertical</property>
+        <child internal-child="action_area">
+          <object class="GtkButtonBox" id="messagedialog-action_area2">
+            <property name="can_focus">False</property>
+            <property name="layout_style">end</property>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="pack_type">end</property>
+            <property name="position">0</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+  </object>
+</interface>

@@ -1,0 +1,62 @@
+GtkWindow {
+	background-color: rgb(220,218,213);
+}
+
+GtkFixed {
+	background-color: rgb(220,218,213);
+}
+
+GtkViewport {
+	background-color: rgb(220,218,213);
+}
+
+GtkMessageDialog {
+	background-color: rgb(220,218,213);
+}
+
+GtkEntry {
+	-GtkWidget-focus-line-width: 0;
+	background-color: rgb(240,228,223);
+	border-radius: 10px;
+	border-width: 0 0 0 0;
+}
+
+GtkButton{
+	-GtkWidget-focus-line-width: 0;
+	border-radius: 50px;
+	border-width: 0 0 0 0;
+	color: black;
+	background-image: -gtk-gradient (linear,
+         left top,
+         left bottom,
+         color-stop(0.0,rgba(220,208,203,1)),
+         color-stop(0.50,rgba(220,208,203,1)),
+         color-stop(0.51,rgba(190,178,163,1)),
+         color-stop(1.00,rgba(190,178,163,1)));		
+}
+
+/* Theme button when the mouse pointer's on it, both are equivalent */
+GtkButton:hover,
+GtkButton:prelight {
+	border-radius: 50px;
+	background-image: -gtk-gradient (linear,
+         left top,
+         left bottom,
+         color-stop(0.0,rgba(240,228,223,1)),
+         color-stop(0.50,rgba(240,228,223,1)),
+         color-stop(0.51,rgba(210,198,183,1)),
+         color-stop(1.00,rgba(210,198,183,1)));	
+}
+
+/* Theme button when it's active (pressed) AND has pointer over it.  */
+GtkButton:hover:active {
+	color: white;
+	border-width: 50px;
+	background-image: -gtk-gradient (linear,
+         left top,
+         left bottom,
+         color-stop(0.0,rgba(220,218,213,1)),
+         color-stop(0.50,rgba(220,218,213,1)),
+         color-stop(0.51,rgba(220,218,213,1)),
+         color-stop(1.00,rgba(220,218,213,1)));	
+}
